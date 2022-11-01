@@ -12,24 +12,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>สมัครสมาชิก</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
-    <h1><center>สมัครสมาชิก</center></h1>
+  <div class="container">
+    <h1 style="text-align:center;">Webboard Piyapron</h1>
+    <?php include "nav.php";?>
+
     <hr>
-    <table style="border: 2px solid black; width:40%" align="center">
-        <tr><td colspan="2" style="background-color: #6CD2FE;">เข้าสู่ระบบ</td></tr>
-        <tr><td>ชื่อบัญชี:</td><td><input type="text" name="ชื่อบัญชี" size="40"></td></tr>
-        <tr><td>รหัสผ่าน:</td><td><input type="password" name="Password"size="40"></td></tr>
-        <tr><td>ชื่อ-นามสกุล:</td><td><input type="text" name="ชื่อ-นามสกุล:"size="40"></td></tr>
-        <tr><td>เพศ:  </td><td><input type="radio" name="เพศ" value="ชาย">ชาย<br>
-        <input type="radio" name="เพศ" value="หญิง">หญิง<br>
-        <input type="radio" name="เพศ" value="อื่นๆ">อื่นๆ
-        <tr><td>อีเมล:</td><td><input type="text" name="อีเมล" size="40"></td></tr>
-        <tr><td colspan="2" align="center"><input type="submit" value="สมัครสมาชิก" ></td></tr>
-            </table>
-            <div align="center">
-                <br>
-         <a href="index.html"> กลับไปหน้าหลัก</a>
-            </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="card text-dark bg-white border-primary">
+          <div class="card-header bg-primary text-white">กรอกข้อมูล</div>
+          <div class="card-body">
+            <form action="register_save.php" method="post">
+              <div class="row mb-3">
+                <label class="col-md-3 col-form-label">ชื่อบัญชี :</label>
+                <div class="col-md-9">
+                  <input type="text" name="login" class="form-control" required>
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label class="col-md-3 col-form-label">รหัสผ่าน :</label>
+                <div class="col-md-9">
+                  <input type="text" name="pwd" class="form-control" required>
+                   </div>
+                </div>
+                <div class="row mb-3">
+                <label class="col-md-3 col-form-label">ชื่อ-นามสกุล :</label>
+                <div class="col-md-9">
+                  <input type="text" name="name" class="form-control" required>
+                   </div>
+                </div>
+                
+                <div class="row mb-3">
+                <label class="col-md-3 col-form-label pt-0">เพศ :</label>
+                <div class="col-md-9">
+                <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" value="m" required>
+                <label class="form-check-label">ชาย</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" value="f" required>
+                <label class="form-check-label">หญิง</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" value="o" required>
+                <label class="form-check-label">อื่นๆ</label>
+              </div>
+                   </div>
+                </div>
+                <div class="row mb-3">
+                <label class="col-md-3 col-form-label">อีเมล :</label>
+                <div class="col-md-9">
+                  <input type="text" name="email" class="form-control" required>
+                  </div>
+                  </div>
+                  <div class="row">
+                  <label class="col-md-3 col-form-label"></label>
+                  <div class="col md-9">
+                    <button class="btn btn-primary btn-sm" type="submit"><i class="bi bi-save"></i>สมัครสมาชิก</button>
+                </div>
+                </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+          </div>
 </body>
 </html>
